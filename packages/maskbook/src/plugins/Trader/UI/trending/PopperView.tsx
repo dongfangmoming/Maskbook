@@ -22,6 +22,8 @@ import { useChainId } from '../../../../web3/hooks/useChainState'
 import { EthereumTokenType } from '../../../../web3/types'
 import { useTokenDetailed } from '../../../../web3/hooks/useTokenDetailed'
 import { TradeContext, useTradeContext } from '../../trader/useTradeContext'
+import { LBPPriceChart } from './LBPPriceChart'
+import { LBPPanel } from './LBPPanel'
 
 const useStyles = makeStyles((theme) => {
     return createStyles({
@@ -184,6 +186,7 @@ export function PopperView(props: PopperViewProps) {
                         <Tab className={classes.tab} label={t('plugin_trader_tab_exchange')} />
                     ) : null}
                     {canSwap ? <Tab className={classes.tab} label={t('plugin_trader_tab_swap')} /> : null}
+                    <Tab className={classes.tab} label="LBP" />
                 </Tabs>
                 {tabIndex === 0 ? <CoinMarketPanel dataProvider={dataProvider} trending={trending} /> : null}
                 {tabIndex === 1 && dataProvider !== DataProvider.UNISWAP ? (
@@ -201,6 +204,7 @@ export function PopperView(props: PopperViewProps) {
                 {tabIndex === 2 && dataProvider !== DataProvider.UNISWAP ? (
                     <TickersTable tickers={tickers} dataProvider={dataProvider} />
                 ) : null}
+                {tabIndex === 4 && <LBPPanel />}
                 {tabIndex === swapTabIndex && canSwap ? (
                     <TradeView
                         classes={{ root: classes.tradeViewRoot }}
