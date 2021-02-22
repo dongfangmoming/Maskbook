@@ -1,5 +1,5 @@
 import { memo } from 'react'
-import { ConnectActionList, ConnectActionListItem } from '../ConnectActionList'
+import { DesktopConnectActionList, DesktopConnectActionListItem } from '../DesktopConnectActionList'
 import { PolkaDotIcon, WalletConnectIcon, MetaMaskIcon } from '@dimensiondev/icons'
 
 export enum ConnectWalletTargets {
@@ -7,27 +7,27 @@ export enum ConnectWalletTargets {
     Connect,
     PolkaDot,
 }
-export interface ConnectWalletListProps {
+export interface DesktopConnectWalletListProps {
     onConnect(target: ConnectWalletTargets): void
 }
-export const ConnectWalletList = memo(({ onConnect }: ConnectWalletListProps) => {
+export const DesktopConnectWalletList = memo(({ onConnect }: DesktopConnectWalletListProps) => {
     return (
-        <ConnectActionList>
-            <ConnectActionListItem
+        <DesktopConnectActionList>
+            <DesktopConnectActionListItem
                 title="MetaMask"
                 icon={<MetaMaskIcon fontSize="inherit" />}
                 onClick={() => onConnect(ConnectWalletTargets.MetaMask)}
             />
-            <ConnectActionListItem
+            <DesktopConnectActionListItem
                 title="Connect Wallet"
                 icon={<WalletConnectIcon fontSize="inherit" />}
                 onClick={() => onConnect(ConnectWalletTargets.Connect)}
             />
-            <ConnectActionListItem
+            <DesktopConnectActionListItem
                 title="PolkaDot Wallet"
                 icon={<PolkaDotIcon fontSize="inherit" />}
                 onClick={() => onConnect(ConnectWalletTargets.PolkaDot)}
             />
-        </ConnectActionList>
+        </DesktopConnectActionList>
     )
 })

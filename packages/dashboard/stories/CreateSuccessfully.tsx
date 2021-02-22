@@ -1,5 +1,5 @@
 import { story } from '@dimensiondev/maskbook-storybook-shared'
-import { CreateSuccessfully as C } from '../src/components/CreatSuccessfully'
+import { DesktopCreateSuccessfully as C } from '../src/components/DesktopCreatSuccessfully'
 const { meta, of } = story(C)
 
 export default meta({ title: '/Components/Create Successfully' })

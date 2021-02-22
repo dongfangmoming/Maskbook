@@ -1,15 +1,14 @@
 import { experimentalStyled as styled, listItemClasses } from '@material-ui/core'
 
-export const ConnectActionList = styled('ul')({
+export const DesktopConnectActionList = styled('ul')(({ theme }) => ({
     display: 'flex',
     flexDirection: 'column',
     listStyle: 'none',
     padding: 0,
-    // TODO: Not mobile friendly
     width: 520,
     [`& .${listItemClasses.root}`]: {
-        marginBottom: '0.75em',
+        marginBottom: theme.spacing(1.5),
     },
-})
+}))
 
-export * from './ConnectActionListItem'
+export * from './DesktopConnectActionListItem'

@@ -2,8 +2,8 @@ import React, { memo, useState } from 'react'
 import { TabContext, TabPanel } from '@material-ui/lab'
 import { Button, createStyles, Tab, experimentalStyled as styled, makeStyles, FilledInput } from '@material-ui/core'
 import { ButtonGroupTabList } from '@dimensiondev/maskbook-theme'
-import { MnemonicConfirm } from '../../components/Mnemonic'
-import { MaskAlert } from '../../components/MaskAlert'
+import { DesktopMnemonicConfirm } from '../../components/DesktopMnemonic'
+import { DesktopAlert } from '../../components/DesktopMaskAlert'
 
 const Container = styled('div')`
     display: flex;
@@ -16,31 +16,38 @@ const ButtonGroupTabContainer = styled('div')`
     width: 582px;
 `
 
-const ControlContainer = styled('div')`
-    margin-top: 50px;
+const ControlContainer = styled('div')(
+    ({ theme }) => `
+    margin-top: ${theme.spacing(6)};
     display: grid;
     justify-content: center;
     grid-template-columns: repeat(2, 180px);
     gap: 24px;
     width: 584px;
-`
+`,
+)
 
-const AlertContainer = styled('div')`
+const AlertContainer = styled('div')(
+    ({ theme }) => `
     width: 676px;
-    margin-top: 59px;
-    color: #afc3e1;
-`
+    margin-top: ${theme.spacing(7)};
+`,
+)
 
-const PrivateKeyInput = styled(FilledInput)`
+const PrivateKeyInput = styled(FilledInput)(
+    ({ theme }) => `
     width: 582px;
     height: 182px;
-    margin-top: 25px;
-`
+    margin-top: ${theme.spacing(3)};
+`,
+)
 
-const PasswordInput = styled(FilledInput)`
+const PasswordInput = styled(FilledInput)(
+    ({ theme }) => `
     width: 582px;
-    margin-top: 25px;
-`
+    margin-top: ${theme.spacing(3)};
+`,
+)
 
 const useTabPanelStyles = makeStyles((theme) =>
     createStyles({
@@ -55,7 +62,7 @@ const useTabPanelStyles = makeStyles((theme) =>
     }),
 )
 
-const walletTabs = ['Mnemonic', 'JSON File', 'Private Key']
+const walletTabs = ['DesktopMnemonic', 'JSON File', 'Private Key']
 
 export const ImportWallet = memo(() => {
     const tabClasses = useTabPanelStyles()
@@ -76,7 +83,7 @@ export const ImportWallet = memo(() => {
                         </ButtonGroupTabList>
                     </ButtonGroupTabContainer>
                     <TabPanel value="Mnemonic" key="Mnemonic" classes={tabClasses}>
-                        <MnemonicConfirm onChange={() => {}} />
+                        <DesktopMnemonicConfirm onChange={() => {}} />
                     </TabPanel>
                     <TabPanel value="Private Key" key="Private Key" classes={tabClasses}>
                         <PrivateKeyInput />
@@ -88,7 +95,7 @@ export const ImportWallet = memo(() => {
                     <Button color="primary">Import</Button>
                 </ControlContainer>
                 <AlertContainer>
-                    <MaskAlert />
+                    <DesktopAlert />
                 </AlertContainer>
             </Container>
         </>

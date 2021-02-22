@@ -1,5 +1,5 @@
 import { story } from '@dimensiondev/maskbook-storybook-shared'
-import { ConnectWalletList as C } from '../src/components/ConnectWalletDialog'
+import { DesktopConnectWalletList as C } from '../../../src/components/DesktopConnectWalletDialog'
 import { action } from '@storybook/addon-actions'
 const { meta, of } = story(C)
 

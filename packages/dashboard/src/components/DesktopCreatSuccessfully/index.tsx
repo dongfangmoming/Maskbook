@@ -2,22 +2,28 @@ import { memo } from 'react'
 import { Button, experimentalStyled as styled, Typography } from '@material-ui/core'
 import { SuccessIcon } from '@dimensiondev/icons'
 
-export interface CreateSuccessfully {
+export interface DesktopCreateSuccessfully {
     onUnlock(): void
 }
 
-export const CreateSuccessfully = memo((props: CreateSuccessfully) => {
+export const DesktopCreateSuccessfully = memo((props: DesktopCreateSuccessfully) => {
     const { onUnlock } = props
 
     return (
         <Container>
-            <SuccessIcon />
+            <Icon>
+                <SuccessIcon fontSize="inherit" />
+            </Icon>
             <SuccessTitle>Success</SuccessTitle>
             <SuccessTips>You have created your wallet successfully</SuccessTips>
             <UnlockButton onClick={onUnlock}>Unlock Wallet</UnlockButton>
         </Container>
     )
 })
+
+const Icon = styled('div')`
+    font-size: 64px;
+`
 
 const Container = styled('div')`
     display: flex;
@@ -27,16 +33,16 @@ const Container = styled('div')`
 
 const SuccessTitle = styled(Typography)(
     ({ theme }) => `
-    font-size: 24px;
-    color: #77E085;
-    font-weight: 500;
+    font-size: ${theme.typography.h5.fontSize};
+    color: ${theme.palette.success.main};
+    font-weight: ${theme.typography.fontWeightMedium};
     margin: ${theme.spacing(2)} 0px;
 `,
 )
 
 const SuccessTips = styled(Typography)(
     ({ theme }) => `
-    font-size:14px;
+    font-size:${theme.typography.fontSize};
     color: #5E5A7D;
 `,
 )

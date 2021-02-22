@@ -3,9 +3,9 @@ import { ButtonGroupTabList } from '@dimensiondev/maskbook-theme'
 import React, { useState } from 'react'
 import { TabContext, TabPanel } from '@material-ui/lab'
 import { RefreshIcon } from '@dimensiondev/icons'
-import { MnemonicReveal } from '../../components/Mnemonic'
+import { DesktopMnemonicReveal } from '../../components/DesktopMnemonic'
 import { makeStyles } from '@material-ui/core/styles'
-import { MaskAlert } from '../../components/MaskAlert'
+import { DesktopAlert } from '../../components/DesktopMaskAlert'
 
 const Container = styled('div')`
     display: flex;
@@ -18,43 +18,54 @@ const ButtonGroupTabContainer = styled('div')`
     width: 582px;
 `
 
-const Refresh = styled('div')`
+const Refresh = styled('div')(
+    ({ theme }) => `
     display: flex;
     align-items: center;
     justify-content: flex-end;
     width: 584px;
-    margin: 16px 0;
-    font-size: 14px;
+    margin: ${theme.spacing(2, 0)};
+    font-size: ${theme.typography.fontSize};
     line-height: 20px;
-    color: #1c68f3;
+    color: ${theme.palette.primary.main};
     cursor: pointer;
-`
+`,
+)
 
-const MnemonicGeneratorContainer = styled('div')`
-    padding: 30px 41px;
-    background-color: #f9fafa;
+const MnemonicGeneratorContainer = styled('div')(
+    ({ theme }) => `
+    padding: ${theme.spacing(4, 5)};
+    background-color: ${theme.palette.background.default};
     border-radius: 8px;
-`
+`,
+)
 
-const ControlContainer = styled('div')`
-    margin-top: 50px;
+const ControlContainer = styled('div')(
+    ({ theme }) => `
+    margin-top: ${theme.spacing(6)};
     display: grid;
     justify-content: center;
     grid-template-columns: repeat(2, 180px);
     gap: 24px;
     width: 584px;
-`
+`,
+)
 
-const AlertContainer = styled('div')`
+const AlertContainer = styled('div')(
+    ({ theme }) => `
     width: 676px;
-    margin-top: 59px;
+    margin-top: ${theme.spacing(7)};
     color: #afc3e1;
-`
-const PrivateKeyInput = styled(FilledInput)`
+`,
+)
+
+const PrivateKeyInput = styled(FilledInput)(
+    ({ theme }) => `
     width: 582px;
     height: 182px;
-    margin-top: 25px;
-`
+    margin-top: ${theme.spacing(3)};
+`,
+)
 
 const useTabPanelStyles = makeStyles(() =>
     createStyles({
@@ -67,7 +78,7 @@ const useTabPanelStyles = makeStyles(() =>
     }),
 )
 
-const walletTabs = ['Mnemonic', 'JSON File', 'Private Key']
+const walletTabs = ['DesktopMnemonic', 'JSON File', 'Private Key']
 
 export function CreateWallet() {
     const tabClasses = useTabPanelStyles()
@@ -92,7 +103,7 @@ export function CreateWallet() {
                             <span>Refresh</span>
                         </Refresh>
                         <MnemonicGeneratorContainer>
-                            <MnemonicReveal words={[...Array(12).keys()].map((i) => String(i))} />
+                            <DesktopMnemonicReveal words={[...Array(12).keys()].map((i) => String(i))} />
                         </MnemonicGeneratorContainer>
                     </TabPanel>
                     <TabPanel key="Private Key" value="Private Key" classes={tabClasses}>
@@ -105,7 +116,7 @@ export function CreateWallet() {
                     <Button color="primary">Verification</Button>
                 </ControlContainer>
                 <AlertContainer>
-                    <MaskAlert />
+                    <DesktopAlert />
                 </AlertContainer>
             </Container>
         </>

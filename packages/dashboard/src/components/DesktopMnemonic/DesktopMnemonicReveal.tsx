@@ -15,7 +15,7 @@ const WordCard = styled(Typography)(
     border-radius: 6px;
     /* TODO: No hardcoded colors */
     color: #1c68f3;
-    font-size: 12px;
+    font-size: ${theme.typography.caption.fontSize};
     /* TODO: No hardcoded colors */
     background-color: ${theme.palette.background.paper};
     display: flex;
@@ -24,11 +24,11 @@ const WordCard = styled(Typography)(
 `,
 )
 
-export interface MnemonicRevealProps {
+export interface DesktopMnemonicRevealProps {
     words: string[]
 }
 // TODO: Select to copy all
-export function MnemonicReveal(props: MnemonicRevealProps) {
+export function DesktopMnemonicReveal(props: DesktopMnemonicRevealProps) {
     const { words } = props
     return (
         <Container>

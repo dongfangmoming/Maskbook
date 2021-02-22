@@ -1,12 +1,12 @@
 import { ListItem, ListItemIcon, ListItemText, experimentalStyled as styled } from '@material-ui/core'
 
-export interface ConnectActionListItemProps {
+export interface DesktopConnectActionListItemProps {
     title: string
     icon: React.ReactNode
     onClick(): void
 }
 
-export function ConnectActionListItem(props: ConnectActionListItemProps) {
+export function DesktopConnectActionListItem(props: DesktopConnectActionListItemProps) {
     const { title, icon, onClick } = props
     return (
         <Container button onClick={onClick}>
@@ -21,12 +21,14 @@ const Icon = styled(ListItemIcon)`
     font-size: 48px;
 `
 
-const Container = styled(ListItem)`
+const Container = styled(ListItem)(
+    ({ theme }) => `
     /* TODO: avoid hardcoded color */
     border: 1px solid #f3f3f4;
     /* TODO: avoid hardcoded shape */
-    border-radius: 8px;
-`
+    border-radius: ${theme.shape.borderRadius};
+`,
+)
 
 const Dot = styled('div')(
     ({ theme }) => `

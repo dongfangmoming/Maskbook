@@ -1,5 +1,5 @@
 import { story } from '@dimensiondev/maskbook-storybook-shared'
-import { WalletQRCodeContainer as C } from '../src/components/WalletQRCodeContainer'
+import { DesktopWalletQRCodeContainer as C } from '../src/components/DesktopWalletQRCodeContainer'
 
 const { meta, of } = story(C)
 

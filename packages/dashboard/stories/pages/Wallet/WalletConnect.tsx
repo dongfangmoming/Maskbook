@@ -1,5 +1,5 @@
 import { story } from '@dimensiondev/maskbook-storybook-shared'
-import { WalletConnect as C } from '../src/components/WalletConnect'
+import { DesktopWalletConnect as C } from '../../../src/components/DesktopWalletConnect'
 const { meta, of } = story(C)
 
 export default meta({ title: 'Pages/Wallet/Wallet Connect' })

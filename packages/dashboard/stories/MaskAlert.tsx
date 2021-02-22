@@ -1,5 +1,5 @@
 import { story } from '@dimensiondev/maskbook-storybook-shared'
-import { MaskAlert as C } from '../src/components/MaskAlert'
+import { DesktopAlert as C } from '../src/components/DesktopMaskAlert'
 
 const { meta, of } = story(C)
 

@@ -11,25 +11,25 @@ import {
 } from '@material-ui/core'
 import { memo, useState } from 'react'
 
-const useStyles = makeStyles(() =>
+const useStyles = makeStyles((theme) =>
     createStyles({
         root: {
             width: 380,
-            marginTop: 12,
+            marginTop: theme.spacing(1.5),
         },
         input: {
-            paddingTop: 15,
-            paddingBottom: 15,
+            paddingTop: theme.spacing(2),
+            paddingBottom: theme.spacing(2),
         },
     }),
 )
 
 // TODO: actions,  and icon may be an img url
-export interface CreateWalletFormProps {
+export interface DesktopCreateWalletFormProps {
     options: Array<{ label: string; icon: React.ReactNode; value: number }>
 }
 
-export const CreateWalletForm = memo((props: CreateWalletFormProps) => {
+export const DesktopCreateWalletForm = memo((props: DesktopCreateWalletFormProps) => {
     const { options } = props
 
     const classes = useStyles()
@@ -59,16 +59,18 @@ const Container = styled('div')`
     flex-direction: column;
 `
 
-const FormContainer = styled(FormControl)`
+const FormContainer = styled(FormControl)(
+    ({ theme }) => `
     width: 380px;
     // Because can't use makeStyles override Input-base style, So do this.
     & .MuiSelect-filled {
         display: flex;
-        padding-top: 15px;
-        padding-bottom: 15px;
+        padding-top: ${theme.spacing(2)};
+        padding-bottom: ${theme.spacing(2)};
     }
 
     & .MuiFilledInput-root {
         height: 100%;
     }
-`
+`,
+)

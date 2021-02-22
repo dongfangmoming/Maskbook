@@ -1,5 +1,5 @@
 import { story } from '@dimensiondev/maskbook-storybook-shared'
-import { CreateWalletForm as C } from '../src/components/CreateWalletForm'
+import { DesktopCreateWalletForm as C } from '../src/components/DesktopCreateWalletForm'
 import { ETHIcon } from '@dimensiondev/icons'
 
 const { meta, of } = story(C)
