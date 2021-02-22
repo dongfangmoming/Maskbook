@@ -2,7 +2,7 @@ import React, { memo, useState } from 'react'
 import { Alert, Collapse, IconButton, experimentalStyled as styled } from '@material-ui/core'
 import { Close as CloseIcon } from '@material-ui/icons'
 
-export const DesktopAlert = memo(() => {
+export const MaskAlert = memo(() => {
     const [openAlert, setOpenAlert] = useState(true)
 
     return (

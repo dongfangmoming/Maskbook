@@ -1,6 +1,6 @@
 import { memo } from 'react'
 import { experimentalStyled as styled, Typography } from '@material-ui/core'
-import { DesktopWalletQRCodeContainer } from '../DesktopWalletQRCodeContainer'
+import { WalletQRCodeContainer } from '../WalletQRCodeContainer'
 
 const Container = styled('div')`
     display: flex;
@@ -17,11 +17,11 @@ const Tip = styled(Typography)(
 `,
 )
 
-export const DesktopWalletConnect = memo(() => {
+export const WalletConnect = memo(() => {
     return (
         <Container>
             <Tip color="textSecondary">Scan QR code with a WalletConnect-compatible wallet</Tip>
-            <DesktopWalletQRCodeContainer width={330} height={330} borderWidth={15} borderHeight={2} />
+            <WalletQRCodeContainer width={330} height={330} borderWidth={15} borderHeight={2} />
         </Container>
     )
 })

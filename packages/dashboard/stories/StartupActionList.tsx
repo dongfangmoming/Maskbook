@@ -1,5 +1,5 @@
 import { story } from '@dimensiondev/maskbook-storybook-shared'
-import { DesktopStartupActionList as C, DesktopStartupActionListItem } from '../src/components/DesktopStartupActionList'
+import { StartupActionList as C, StartupActionListItem } from '../src/components/StartupActionList'
 import { CloudUpload, CloudDownload, Restore } from '@material-ui/icons'
 const { meta, of } = story(C)
 
@@ -7,14 +7,14 @@ export default meta({ title: 'Components/Startup Action List' })
 export const StartupActionList = of({
     children: (
         <>
-            <DesktopStartupActionListItem
+            <StartupActionListItem
                 icon={<CloudUpload />}
                 title="Creating a new account"
                 description="Local storage of accounts and data"
                 action="Sign Up"
                 onClick={() => {}}
             />
-            <DesktopStartupActionListItem
+            <StartupActionListItem
                 icon={<CloudDownload />}
                 title="Sign in to your account"
                 description="Support only for your local account."
@@ -22,7 +22,7 @@ export const StartupActionList = of({
                 action="Sign in"
                 onClick={() => {}}
             />
-            <DesktopStartupActionListItem
+            <StartupActionListItem
                 icon={<Restore />}
                 title="Restore from backups"
                 description="Restoring from historical backups. And very very very very very very very very very long text."

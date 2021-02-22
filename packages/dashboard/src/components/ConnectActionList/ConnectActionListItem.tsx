@@ -1,12 +1,12 @@
 import { ListItem, ListItemIcon, ListItemText, experimentalStyled as styled } from '@material-ui/core'
 
-export interface DesktopConnectActionListItemProps {
+export interface ConnectActionListItemProps {
     title: string
     icon: React.ReactNode
     onClick(): void
 }
 
-export function DesktopConnectActionListItem(props: DesktopConnectActionListItemProps) {
+export function ConnectActionListItem(props: ConnectActionListItemProps) {
     const { title, icon, onClick } = props
     return (
         <Container button onClick={onClick}>

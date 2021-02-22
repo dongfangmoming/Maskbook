@@ -24,11 +24,11 @@ const WordCard = styled(Typography)(
 `,
 )
 
-export interface DesktopMnemonicRevealProps {
+export interface MnemonicRevealProps {
     words: string[]
 }
 // TODO: Select to copy all
-export function DesktopMnemonicReveal(props: DesktopMnemonicRevealProps) {
+export function MnemonicReveal(props: MnemonicRevealProps) {
     const { words } = props
     return (
         <Container>

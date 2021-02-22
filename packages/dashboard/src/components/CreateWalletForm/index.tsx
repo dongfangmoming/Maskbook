@@ -25,11 +25,11 @@ const useStyles = makeStyles((theme) =>
 )
 
 // TODO: actions,  and icon may be an img url
-export interface DesktopCreateWalletFormProps {
+export interface CreateWalletFormProps {
     options: Array<{ label: string; icon: React.ReactNode; value: number }>
 }
 
-export const DesktopCreateWalletForm = memo((props: DesktopCreateWalletFormProps) => {
+export const CreateWalletForm = memo((props: CreateWalletFormProps) => {
     const { options } = props
 
     const classes = useStyles()

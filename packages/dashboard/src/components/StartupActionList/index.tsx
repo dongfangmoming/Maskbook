@@ -3,7 +3,7 @@ import type {} from '@material-ui/system'
 /**
  * This component is an abstraction of a list of "start up action suggestions".
  */
-export const DesktopStartupActionList = styled('ul')(
+export const StartupActionList = styled('ul')(
     ({ theme }) => `
     display: flex;
     flex-direction: column;
@@ -15,5 +15,5 @@ export const DesktopStartupActionList = styled('ul')(
     }
 `,
 )
-export interface DesktopStartupActionListProps extends React.PropsWithChildren<{}> {}
-export * from './DesktopStartupActionListItem'
+export interface StartupActionListProps extends React.PropsWithChildren<{}> {}
+export * from './StartupActionListItem'

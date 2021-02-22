@@ -2,11 +2,11 @@ import { memo } from 'react'
 import { Button, experimentalStyled as styled, Typography } from '@material-ui/core'
 import { SuccessIcon } from '@dimensiondev/icons'
 
-export interface DesktopCreateSuccessfully {
+export interface CreateSuccessfully {
     onUnlock(): void
 }
 
-export const DesktopCreateSuccessfully = memo((props: DesktopCreateSuccessfully) => {
+export const CreateSuccessfully = memo((props: CreateSuccessfully) => {
     const { onUnlock } = props
 
     return (

@@ -10,7 +10,7 @@ import {
 } from '@material-ui/core'
 import { memo, useLayoutEffect, useRef } from 'react'
 
-export interface DestopStartupActionListItemProps {
+export interface StartupActionListItemProps {
     icon: React.ReactNode
     title: string
     description: string
@@ -21,7 +21,7 @@ export interface DestopStartupActionListItemProps {
 /**
  * This component is an abstraction of a list of "start up action suggestions".
  */
-export const DesktopStartupActionListItem = memo((props: DestopStartupActionListItemProps) => {
+export const StartupActionListItem = memo((props: StartupActionListItemProps) => {
     const { onClick, color = 'primary', title, description, action, icon } = props
     // I know this is scary. See https://github.com/mui-org/material-ui/issues/13495
     const buttonRef = useRef<HTMLElement>(null)

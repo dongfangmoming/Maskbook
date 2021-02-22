@@ -1,11 +1,10 @@
-import { Button, createStyles, experimentalStyled as styled, FilledInput, Tab } from '@material-ui/core'
+import { Button, createStyles, experimentalStyled as styled, FilledInput, Tab, makeStyles } from '@material-ui/core'
 import { ButtonGroupTabList } from '@dimensiondev/maskbook-theme'
 import React, { useState } from 'react'
 import { TabContext, TabPanel } from '@material-ui/lab'
 import { RefreshIcon } from '@dimensiondev/icons'
-import { DesktopMnemonicReveal } from '../../components/DesktopMnemonic'
-import { makeStyles } from '@material-ui/core/styles'
-import { DesktopAlert } from '../../components/DesktopMaskAlert'
+import { MnemonicReveal } from '../../components/Mnemonic'
+import { MaskAlert } from '../../components/MaskAlert'
 
 const Container = styled('div')`
     display: flex;
@@ -78,7 +77,7 @@ const useTabPanelStyles = makeStyles(() =>
     }),
 )
 
-const walletTabs = ['DesktopMnemonic', 'JSON File', 'Private Key']
+const walletTabs = ['Mnemonic', 'JSON File', 'Private Key']
 
 export function CreateWallet() {
     const tabClasses = useTabPanelStyles()
@@ -103,7 +102,7 @@ export function CreateWallet() {
                             <span>Refresh</span>
                         </Refresh>
                         <MnemonicGeneratorContainer>
-                            <DesktopMnemonicReveal words={[...Array(12).keys()].map((i) => String(i))} />
+                            <MnemonicReveal words={[...Array(12).keys()].map((i) => String(i))} />
                         </MnemonicGeneratorContainer>
                     </TabPanel>
                     <TabPanel key="Private Key" value="Private Key" classes={tabClasses}>
@@ -116,7 +115,7 @@ export function CreateWallet() {
                     <Button color="primary">Verification</Button>
                 </ControlContainer>
                 <AlertContainer>
-                    <DesktopAlert />
+                    <MaskAlert />
                 </AlertContainer>
             </Container>
         </>

@@ -2,8 +2,8 @@ import React, { memo, useState } from 'react'
 import { TabContext, TabPanel } from '@material-ui/lab'
 import { Button, createStyles, Tab, experimentalStyled as styled, makeStyles, FilledInput } from '@material-ui/core'
 import { ButtonGroupTabList } from '@dimensiondev/maskbook-theme'
-import { DesktopMnemonicConfirm } from '../../components/DesktopMnemonic'
-import { DesktopAlert } from '../../components/DesktopMaskAlert'
+import { DesktopMnemonicConfirm } from '../../components/Mnemonic'
+import { MaskAlert } from '../../components/MaskAlert'
 
 const Container = styled('div')`
     display: flex;
@@ -62,7 +62,7 @@ const useTabPanelStyles = makeStyles((theme) =>
     }),
 )
 
-const walletTabs = ['DesktopMnemonic', 'JSON File', 'Private Key']
+const walletTabs = ['Mnemonic', 'JSON File', 'Private Key']
 
 export const ImportWallet = memo(() => {
     const tabClasses = useTabPanelStyles()
@@ -95,7 +95,7 @@ export const ImportWallet = memo(() => {
                     <Button color="primary">Import</Button>
                 </ControlContainer>
                 <AlertContainer>
-                    <DesktopAlert />
+                    <MaskAlert />
                 </AlertContainer>
             </Container>
         </>

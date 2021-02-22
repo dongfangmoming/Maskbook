@@ -1,6 +1,6 @@
 import { experimentalStyled as styled, listItemClasses } from '@material-ui/core'
 
-export const DesktopConnectActionList = styled('ul')(({ theme }) => ({
+export const ConnectActionList = styled('ul')(({ theme }) => ({
     display: 'flex',
     flexDirection: 'column',
     listStyle: 'none',
@@ -11,4 +11,4 @@ export const DesktopConnectActionList = styled('ul')(({ theme }) => ({
     },
 }))
 
-export * from './DesktopConnectActionListItem'
+export * from './ConnectActionListItem'
